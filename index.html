@@ -1,1 +1,82 @@
-Hello From Sanyam and Jiju
+<html>
+    <body>
+        <h1> Your Income Tax Rank in India</h1>
+        <h4>*based on <a href = "https://www.incometaxindia.gov.in/Documents/Direct%20Tax%20Data/IT-Return-Statistics-Assessment-Year-2018-19.pdf"> data</a> from the Income Tax Department for the FE 2018-2019.</h4><br>
+        <h4> <ul>
+            <li>There are approximately 1, 350, 000, 000 people in India.</li><br>
+            <li>Of these: 55, 260, 219 individuals filed income tax returns in India </li><br>
+            <li>We shall now see which rank you hold between 1 - 55, 260, 219</li><br>
+            <li>Enter your gross income in rupees below. Your gross income is all the income you earned in the Financial Year 2017-2018 (this is used to calculate your taxes for Assessment Year 2018-2019)<br>
+            </li>
+        </ul>
+        </h4>
+        <form>
+            Gross Income: <input type="number" name="grossincome" id="grossincome">
+            <button onclick="calculateRank ()">Get my Rank</button>
+          </form>
+          
+        
+<script>            
+function calculateRank (){
+var grossincome = document.getElementById("grossincome").value;
+var taxpayersnumber;
+var rankbetween;
+
+if (grossincome > 5000000000) { 
+    {taxpayersnumber = 3;
+    rankbetween = "Rank 1 to Rank 3";}
+} else if (grossincome <= 5000000000 && grossincome > 1000000000) {
+    taxpayersnumber = 74; 
+    rankbetween = "Rank 4 to Rank 77";
+} else if (grossincome <=1000000000 && grossincome > 500000000) {
+    taxpayersnumber = 147; 
+    rankbetween = "Rank 78 to Rank 224";
+} else if (grossincome <=500000000 && grossincome > 250000000) {
+    taxpayersnumber = 451; 
+    rankbetween = "Rank 225 to Rank 676";
+} else if (grossincome <=250000000 && grossincome > 100000000) {
+    taxpayersnumber = 2089; 
+    rankbetween = "Rank 677 to Rank 2766";
+} else if (grossincome <=100000000 && grossincome > 50000000) {
+    taxpayersnumber = 5132; 
+    rankbetween = "Rank 2767 to Rank 7899";
+} else if (grossincome <=50000000 && grossincome > 10000000) {
+    taxpayersnumber = 89793; 
+    rankbetween = "Rank 7900 to Rank 97693";
+} else if (grossincome <=10000000 && grossincome > 5000000) {
+    taxpayersnumber = 209345;
+    rankbetween = "Rank 97694  to Rank 307039"; 
+} else if (grossincome <=5000000 && grossincome > 2500000) {
+    taxpayersnumber = 736059;
+    rankbetween = "Rank 307040  to Rank 1043099"; 
+} else if (grossincome <=2500000 && grossincome > 2000000) {
+    taxpayersnumber = 508642;
+    rankbetween = "Rank 1043100  to Rank 1551742 ";     
+}  else if (grossincome <=2000000 && grossincome > 1500000) {
+    taxpayersnumber = 998299;
+    rankbetween = "Rank 1551743  to Rank 2550042";     
+}  else if (grossincome <=1500000 && grossincome > 1000000) {
+    taxpayersnumber = 3001781;
+    rankbetween = "Rank 2550043  to Rank 5551824";     
+} else if (grossincome <=1000000 && grossincome > 500000) {
+    taxpayersnumber = 14754245;
+    rankbetween = "Rank 5551825  to Rank 20306070";     
+} else if (grossincome <=500000 && grossincome > 200000) {
+    taxpayersnumber = 31028229;
+    rankbetween = "Rank 20306070 to Rank 51334299";        
+} else if (grossincome <= 200000 && grossincome > 0) {
+    taxpayersnumber = 3755163;
+    rankbetween = "Rank 51334300 to Rank 55089463";        
+} else if (grossincome = 0) {
+    taxpayersnumber = 170767;
+    rankbetween = "Rank 51334300 to Rank 55260230";
+    //There is an error here - total no of taxpayers and this rank no at the end - 55260230 -  are not matching        
+}
+
+document.write("If you earn Rupees " + grossincome + " then there are " + taxpayersnumber + " taxpayers (including you) in the same income category in India. Your rank is " + rankbetween + ".");
+}
+calculateRank (4200000)
+
+    </script>
+    </body>
+</html>
